@@ -60,4 +60,11 @@ export class ArticleController {
     });
     return response; 
   }
+  async deleteArticle(token: string, slug: string) {
+    const deleteResponse = await this.request.delete(`/api/articles/${slug}`, {
+      headers: {
+        'Authorization': `Token ${token}`
+      }
+    })
+     }
 }
