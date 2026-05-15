@@ -4,8 +4,8 @@ A professional test automation framework built with Playwright and TypeScript fr
 
 ## Target Application
 The framework automates testing on a real-world production platform Conduit (RealWorld App):
-- UI Website: bondaracademy.com
-- Backend API: bondaracademy.com
+- UI Website: "https://conduit.bondaracademy.com/"
+- Backend API: 'https://conduit-api.bondaracademy.com/'
 
 ## Architecture and Project Structure
 The project follows clean coding standards and strict layers separation for high maintainability:
