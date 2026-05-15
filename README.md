@@ -1,41 +1,68 @@
-# Playwright Hybrid Test Automation Framework
+# Playwright Hybrid Framework (UI + API)
 
-A professional test automation framework built with Playwright and TypeScript from scratch. This project demonstrates a hybrid automation approach combining fast API data seeding with robust UI validation to achieve maximum test execution speed and environment stability.
+A lightweight test automation framework built to demonstrate modern hybrid test architecture using Playwright and TypeScript. Designed to validate end-to-end user workflows with high execution speed and environment stability.
 
-## Target Application
-The framework automates testing on a real-world production platform Conduit (RealWorld App):
-- UI Website: "https://conduit.bondaracademy.com/"
-- Backend API: 'https://conduit-api.bondaracademy.com/'
+## Features
 
-## Architecture and Project Structure
-The project follows clean coding standards and strict layers separation for high maintainability:
-- api-helpers/ — API controllers seeding dynamic test data on the fly via HTTP requests.
-- page-objects/ — UI page classes utilizing the Page Object Model (POM) pattern and modern locators.
-- tests/ — Isolated, parallelized end-to-end test scenarios (Pure API and Hybrid workflows).
+- Hybrid UI + API test execution
+- Page Object Model (POM) architecture
+- Explicit backend request contexts for fast data seeding
+- Automated runtime test user registration
+- Isolated data cleanup via hooks
+- Parallel execution support
+- Built-in Playwright HTML reporting
+- GitHub Actions CI pipeline integration
 
-## Key Features Demonstrated
-- AAA Pattern (Arrange, Act, Assert): Clean, highly readable test structure.
-- Dynamic On-the-Fly Registration: Tests create their own unique users dynamically, avoiding flaky states and shared account dependencies.
-- Auto-waiting and Smart Locators: Utilizing page.getByText() and strict timeouts to eliminate implicit or thread sleeps.
-- Robust Failure Capturing: Automatic HTML test reports with screenshots and video recordings on failure.
+## Project Structure
 
-## Tech Stack
-- Language: TypeScript
-- Test Runner / Framework: Playwright Engine
+```
+/api-helpers
+  - ArticleController.ts
+/page-objects
+  - HomePage.ts
+  - ArticlePage.ts
+/tests
+  - api-articles.spec.ts
+  - hybrid-articles.spec.ts
+```
 
-## Quick Start
+## Running Tests
 
-### Installation
-Ensure you have Node.js installed, then clone the repository and run:
+Install dependencies:  
 ```bash
 npm install
 ```
 
-### Run Tests
-```bash
-# Execute all tests in headless mode
+Run all tests in headless mode:  
+``` bash
 npx playwright test
+```
 
-# View interactive HTML report
+Open interactive HTML test report:  
+``` bash
 npx playwright show-report
 ```
+
+## Reporting
+
+The framework utilizes standard Playwright HTML Reporter to generate comprehensive test run details, complete with step-by-step logs, screenshots on failure, and video recordings.
+
+## Project Purpose
+
+This project was built as part of my QA Automation path to practice and master:
+- Full-stack hybrid test synchronization (API seeding + UI verification)
+- Scalable, low-maintenance test suite design
+- Flakiness elimination via modern element locators and automatic waiting
+- Automated regression pipeline setup (CI/CD)
+
+## Tech Stack
+
+- TypeScript
+- Playwright Engine
+- Node.js
+- GitHub Actions
+
+## Author
+
+Hryhorii Markevych  
+QA Automation Engineer
