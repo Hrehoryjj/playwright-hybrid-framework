@@ -44,7 +44,7 @@ export class ArticleController {
     return loginBody.user.token;
   }
 
-  async createArticle(token: string, title: string) {
+    async createArticle(token: string, title: string, description: string, body: string, tagList: string[]) {
     const response = await this.request.post('/api/articles', {
       headers: {
         'Authorization': `Token ${token}`
@@ -52,9 +52,9 @@ export class ArticleController {
       data: {
         article: {
           title: title,
-          description: "Why modern engineering teams are migrating from Selenium to Playwright in 2026.",
-          body: "Selenium has served the industry for decades, but modern web applications demand faster execution, built-in waiting mechanisms, and robust network interception. This article explores how Playwright solves the flakiness problem out of the box.",
-          tagList: ["automation", "playwright", "architecture"]
+          description: description, 
+          body: body,               
+          tagList: tagList 
         }
       }
     });
