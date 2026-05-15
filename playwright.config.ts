@@ -4,7 +4,7 @@ export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
   reporter: 'html',
-  globalSetup: require.resolve('./global-setup'),
+  globalSetup: './global-setup.ts',
   use: {
     baseURL: 'https://conduit-api.bondaracademy.com',
     screenshot: 'only-on-failure',

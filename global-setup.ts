@@ -27,6 +27,7 @@ async function globalSetup() {
   }
 
   await apiContext.storageState({ path: 'auth/user-state.json' });
+  
   await apiContext.dispose();
 }
 
